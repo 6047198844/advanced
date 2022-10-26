@@ -72,6 +72,14 @@ public class ContextV1Test {
         };
         final ContextV1 contextV2 = new ContextV1(strategyLogic1);
         contextV2.execute();
+    }
 
+    @Test
+    void strategyV3() {
+        final ContextV1 contextV1 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
+        contextV1.execute();
+
+        final ContextV1 contextV2 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
+        contextV2.execute();
     }
 }
